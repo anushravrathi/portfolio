@@ -3,18 +3,12 @@
 import { motion, MotionValue, useTransform } from "framer-motion";
 
 export default function Overlay({ scrollProgress }: { scrollProgress: MotionValue<number> }) {
-  // Section 1: "Hi, I am Anushrav 👋"
-  // Fully gone by 15% and stays gone.
   const opacity1 = useTransform(scrollProgress, [0, 0.1, 0.15, 1], [1, 1, 0, 0]);
   const y1 = useTransform(scrollProgress, [0, 0.15, 1], [0, -40, -40]);
 
-  // Section 2: "Building scalable apps."
-  // Only visible between 25% and 55%
   const opacity2 = useTransform(scrollProgress, [0, 0.2, 0.25, 0.5, 0.6, 1], [0, 0, 1, 1, 0, 0]);
   const y2 = useTransform(scrollProgress, [0, 0.2, 0.6, 1], [40, 40, -40, -40]);
 
-  // Section 3: "Learning by doing."
-  // Only visible between 70% and 95%
   const opacity3 = useTransform(scrollProgress, [0, 0.65, 0.7, 0.9, 0.98, 1], [0, 0, 1, 1, 0, 0]);
   const y3 = useTransform(scrollProgress, [0, 0.65, 0.98, 1], [40, 40, -40, -40]);
 

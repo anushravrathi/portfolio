@@ -19,7 +19,6 @@ export default function ScrollyCanvas() {
     offset: ["start start", "end end"]
   });
 
-  // Preload images
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
     let loadedCount = 0;
@@ -29,7 +28,6 @@ export default function ScrollyCanvas() {
         img.src = currentFrame(i);
         img.onload = () => {
           loadedCount++;
-          // Draw the first frame immediately when it loads to prevent blank screen
           if (i === 0 && canvasRef.current) {
             renderFrame(img);
           }
@@ -45,7 +43,6 @@ export default function ScrollyCanvas() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    // object-fit: cover logic
     const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
     const x = (canvas.width / 2) - (img.width / 2) * scale;
     const y = (canvas.height / 2) - (img.height / 2) * scale;
@@ -54,17 +51,13 @@ export default function ScrollyCanvas() {
     ctx.drawImage(img, x, y, img.width * scale, img.height * scale);
   };
 
-  // Handle Resize
   useEffect(() => {
     const updateCanvasSize = () => {
       const canvas = canvasRef.current;
       if (canvas) {
-        // Use client dimensions for canvas rendering space
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
-        // Re-render current frame on resize
         if (images.length > 0) {
-          // get current frame based on scrollYProgress.get()
           const latest = scrollYProgress.get();
           const index = Math.min(FRAME_COUNT - 1, Math.max(0, Math.round(latest * (FRAME_COUNT - 1))));
           if (images[index]?.complete) {
@@ -75,12 +68,10 @@ export default function ScrollyCanvas() {
     };
     
     window.addEventListener("resize", updateCanvasSize);
-    updateCanvasSize(); // initial
+    updateCanvasSize();
     return () => window.removeEventListener("resize", updateCanvasSize);
   }, [images, scrollYProgress]);
 
-  // Update canvas on scroll
-  // Map scroll progress (0-1) to frame index (1-40)
   const frameIndex = useTransform(scrollYProgress, [0, 1], [0, FRAME_COUNT - 1]);
 
   useEffect(() => {

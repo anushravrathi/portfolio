@@ -11,6 +11,8 @@ const projectMeta = [
     gradient: "from-sky-500/20 via-blue-600/10 to-zinc-900",
     glow: "rgba(56,189,248,0.15)",
     accent: "#38bdf8",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "Ecommerce Scraper",
@@ -21,6 +23,8 @@ const projectMeta = [
     gradient: "from-blue-500/20 via-blue-700/10 to-zinc-900",
     glow: "rgba(59,130,246,0.15)",
     accent: "#3b82f6",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "AI Article Generator",
@@ -31,6 +35,8 @@ const projectMeta = [
     gradient: "from-cyan-500/20 via-sky-700/10 to-zinc-900",
     glow: "rgba(6,182,212,0.15)",
     accent: "#06b6d4",
+    liveLink: "#",
+    githubLink: "#",
   },
   {
     title: "Signature Generator",
@@ -41,6 +47,8 @@ const projectMeta = [
     gradient: "from-sky-400/20 via-blue-500/10 to-zinc-900",
     glow: "rgba(125,211,252,0.15)",
     accent: "#7dd3fc",
+    liveLink: "#",
+    githubLink: "#",
   },
 ];
 
@@ -60,7 +68,6 @@ export default function Projects() {
               >
                 <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300" />
 
-                {/* Project image */}
                 <div className="w-full h-64 rounded-xl mb-8 overflow-hidden relative group/img">
                   <Image
                     src={project.image}
@@ -68,17 +75,22 @@ export default function Projects() {
                     fill
                     className="object-cover object-top transition-transform duration-500 group-hover/img:scale-105"
                   />
-                  {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 <div className="flex justify-between items-start mb-4 relative z-10">
-                  <h3 className="text-2xl font-bold text-white group-hover:transition-colors" style={{ '--hover-color': project.accent } as React.CSSProperties}>
-                    {project.title}
-                  </h3>
-                  <div className="flex space-x-2 text-zinc-400">
-                    <ExternalLink className="w-5 h-5 hover:text-white transition-colors" />
-                    <Code2 className="w-5 h-5 hover:text-white transition-colors" />
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                    <h3 className="text-2xl font-bold text-white transition-colors cursor-pointer" style={{ '--hover-color': project.accent } as any}>
+                      {project.title}
+                    </h3>
+                  </a>
+                  <div className="flex space-x-3 text-zinc-400">
+                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="Live Demo">
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors" title="GitHub Repo">
+                      <Code2 className="w-5 h-5" />
+                    </a>
                   </div>
                 </div>
 

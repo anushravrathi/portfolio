@@ -4,7 +4,6 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 export default function Contact() {
   return (
     <footer className="bg-[#080e1a] py-32 px-8 relative z-20 border-t border-sky-500/10 overflow-hidden">
-        {/* Abstract Background element */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-64 bg-sky-500/10 blur-[100px] rounded-full pointer-events-none" />
 
         <div className="max-w-6xl mx-auto flex flex-col items-center text-center relative z-10">

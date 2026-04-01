@@ -18,11 +18,20 @@ export default function CustomCursor() {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Snap dot immediately
       if (dotRef.current) {
         dotRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
       }
     };
+
+    const isTouchDevice = () => {
+      return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0));
+    };
+
+    if (isTouchDevice()) {
+      if (dotRef.current) dotRef.current.style.display = 'none';
+      if (ringRef.current) ringRef.current.style.display = 'none';
+      return;
+    }
 
     const onEnter = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -42,7 +51,6 @@ export default function CustomCursor() {
       }
     };
 
-    // Animate the trailing ring with lerp
     const animate = () => {
       const ease = 0.1;
       ringX += (mouseX - ringX) * ease;

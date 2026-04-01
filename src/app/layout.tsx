@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Anushrav Rathi | Portfolio",
-  description: "Full Stack Developer (MERN) & React Native",
+  description: "Full Stack Developer & React Native",
 };
 
 export default function RootLayout({

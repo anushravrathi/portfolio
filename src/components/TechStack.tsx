@@ -21,8 +21,8 @@ export default function TechStack() {
 
   return (
     <section className="bg-transparent py-24 relative z-20 overflow-hidden border-b border-white/5">
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0f0f11] to-transparent z-30 pointer-events-none" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0f0f11] to-transparent z-30 pointer-events-none" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#080e1a] to-transparent z-30 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#080e1a] to-transparent z-30 pointer-events-none" />
       
       <div className="max-w-6xl mx-auto px-8 mb-16">
         <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white text-center">Tech Symphony</h2>
