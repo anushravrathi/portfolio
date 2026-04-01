@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #080e1a;
+  --color-foreground: #e8f4ff;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+}
+
+@utility glass {
+  background: rgba(14, 30, 60, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.08);
+}
+
+body {
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+h1, h2, h3 {
+  color: #38bdf8;
+}
