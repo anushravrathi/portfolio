@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ExternalLink, Code2, Smartphone, ShoppingCart, Sparkles, PenLine } from "lucide-react";
+import { ExternalLink, Code2, Smartphone, ShoppingCart, Sparkles, PenLine, Mail } from "lucide-react";
 
 const projectMeta = [
   {
@@ -19,7 +19,7 @@ const projectMeta = [
     desc: "Building a SaaS platform for automated email outreach with personalization.",
     tags: ["Next.js", "GmailAPI"],
     icon: Mail,
-    image: "/ecommerce-scraper.jpg",
+    image: "/cold-email-saas.png",
     gradient: "from-blue-500/20 via-blue-700/10 to-zinc-900",
     glow: "rgba(59,130,246,0.15)",
     accent: "#3b82f6",
@@ -56,7 +56,7 @@ export default function Projects() {
   return (
     <section className="bg-transparent py-32 px-8 min-h-screen relative z-20">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-16">Projects</h2>
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tighter text-white mb-16">Selected Work</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projectMeta.map((project, i) => {
