@@ -18,7 +18,7 @@ const projectMeta = [
     title: "Outreach Email SaaS",
     desc: "Building a SaaS platform for automated email outreach with personalization.",
     tags: ["Next.js", "GmailAPI"],
-    icon: Email,
+    icon: Mail,
     image: "/ecommerce-scraper.jpg",
     gradient: "from-blue-500/20 via-blue-700/10 to-zinc-900",
     glow: "rgba(59,130,246,0.15)",
